@@ -1,0 +1,136 @@
+/* General styles for the Home section */
+#home {
+    display: flex;
+    flex-direction: row; /* Change to row for desktop layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center items vertically */
+    height: 100vh; /* Full height of the viewport */
+    padding: 20px;
+    color: white;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Background image with blur effect */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/chanduback.jpeg') no-repeat center center/cover;
+    filter: blur(0px); /* Adjust the blur value as needed */
+    z-index: 1; /* Ensure it's behind the content */
+}
+
+/* Content on top of the blurred background */
+#home .content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the background */
+    text-align: center; /* Center align text */
+    width: 100%; /* Make content take full width */
+    max-width: 800px; /* Limit the width of content */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Text styles for the heading, subtitle, and paragraph */
+#home h1, 
+#home h2, 
+#home p {
+    text-align: center; /* Center text */
+    font-family: 'Roboto', sans-serif; /* Use a modern font */
+    margin: 0; /* Remove default margin */
+    z-index: 3; /* Ensure text is on top */
+    
+    padding: 10px; /* Padding inside the background */
+    border-radius: 5px; /* Rounded corners */
+}
+
+#home h1 {
+    font-size: 4rem; /* Increase heading size */
+    margin-bottom: 10px; /* Space between elements */
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+}
+
+#home h2 {
+    font-size: 2.5rem; /* Increase subheading size */
+    margin-bottom: 10px; /* Space between elements */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+}
+
+#home p {
+    font-size: 1.5rem; /* Increase paragraph size */
+    margin-top: 10px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
+}
+
+/* For large tablets and smaller screens */
+@media (max-width: 1024px) {
+    #home {
+        flex-direction: column; /* Stack content and image vertically on smaller screens */
+        padding: 10px;
+    }
+
+    #home h1 {
+        font-size: 2.5rem; /* Decrease heading size for tablets */
+    }
+
+    #home h2 {
+        font-size: 2rem; /* Decrease subheading size for tablets */
+    }
+
+    #home p {
+        font-size: 1.2rem; /* Decrease paragraph size for tablets */
+    }
+}
+
+/* For smaller screens like mobile */
+@media (max-width: 768px) {
+    #home {
+        padding: 20px; /* Add padding to the entire section */
+    }
+
+    #home .content {
+        align-items: center; /* Center content on small screens */
+        text-align: center; /* Center-align text */
+        padding-top: 100px; /* Add padding from the top */
+        width: 90%; /* Full width for content on mobile */
+        margin-bottom: 20px; /* Margin below content to separate from image */
+    }
+
+    #home h1 {
+        font-size: 4rem; /* Increase size for mobile */
+    }
+
+    #home h2 {
+        font-size: 2.5rem; /* Increase size for mobile */
+    }
+
+    #home p {
+        font-size: 1.5rem; /* Increase size for mobile */
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+    #home h1 {
+        font-size: 2rem; /* Further reduce heading size */
+    }
+
+    #home h2 {
+        font-size: 1.5rem; /* Further reduce subheading size */
+    }
+
+    #home p {
+        font-size: 1rem; /* Further reduce paragraph size */
+    }
+
+    #home .content {
+        padding-top: 100px; /* Add more padding for smaller screens */
+    }
+}

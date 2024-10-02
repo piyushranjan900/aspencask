@@ -1,0 +1,245 @@
+/* ContactSection.css */
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-gradient-to-r {
+  background: linear-gradient(to right, #1a202c, #1a202c); /* Purple to Blue gradient */
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.py-16, .px-4, .lg\:px-20 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.lg\:px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.md\:grid-cols-2 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Form Section */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px; /* Max width for better form alignment */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+input, textarea {
+  background-color: #2d3748;
+  border: none;
+  padding: 0.75rem;
+  color: white;
+  border-radius: 8px;
+  outline: none;
+  width: 100%; /* Ensure full width within form */
+  height: 50px; /* Fixed height for input boxes */
+  font-size: 1rem; /* Consistent text size */
+}
+
+textarea {
+  height: 150px; /* Larger height for the message box */
+}
+
+input::placeholder, textarea::placeholder {
+  color: #a0aec0; /* Softer color for placeholder text */
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5); /* Blue outline on focus */
+  background-color: #1a202c; /* Darker background on focus */
+}
+
+/* Submit Button */
+button {
+  background: linear-gradient(to right, #667eea, #764ba2); /* Blue to Purple gradient */
+  padding: 0.75rem;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.125rem; /* Larger font size for the button */
+  width: 100%; /* Button takes full width */
+  height: 50px; /* Fixed height for button */
+}
+
+button:hover {
+  background: linear-gradient(to right, #5a67d8, #6b46c1);
+}
+
+/* General Text Styling */
+.text-center {
+  text-align: center;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.leading-relaxed {
+  line-height: 1.75rem;
+}
+
+/* Form Title */
+form h2 {
+  font-size: 2rem; /* Larger title size */
+  text-align: center;
+  color: #b794f4; /* Soft Indigo color for the title */
+  margin-bottom: 1rem;
+}
+
+/* Input Labels */
+label {
+  font-size: 1rem;
+  color: #e2e8f0; /* Light color for labels */
+  margin-bottom: 0.5rem;
+  display: inline-block; /* Ensures labels are properly aligned */
+}
+
+/* Form Container */
+.form-container {
+  padding: 2rem;
+  background-color: #1a202c; /* Dark background for form box */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px; /* Max width for responsiveness */
+  margin-left: auto;
+  margin-right: auto; /* Center the container */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  input, textarea, button {
+    height: auto; /* Remove fixed height for smaller screens */
+    font-size: 0.9rem; /* Adjust text size for mobile */
+  }
+
+  form {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}
+
+/* Contact Info Section */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.bg-gray-900 {
+  background-color: #1a202c;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.space-y-6 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.text-gray-300 {
+  color: #e2e8f0;
+}
+
+.text-indigo-300 {
+  color: #b794f4;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.z-10 {
+  z-index: 10;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* Calendar Section */
+.calendar {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .calendar {
+    transform: scale(0.9);
+  }
+}
+
+/* Selected Date */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.text-green-600 {
+  color: #48bb78;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+
+  .text-3xl {
+    font-size: 2rem;
+  }
+
+  .py-16 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .p-8 {
+    padding: 1.5rem;
+  }
+}

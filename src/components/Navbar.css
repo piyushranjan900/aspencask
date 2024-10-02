@@ -1,0 +1,129 @@
+/* General Styles for Navbar */
+.NavbarContainer {
+  background-color: #101820da; /* Deep dark background */
+  padding: 15px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  position: fixed; /* Fix position on the screen */
+  top: 20px; /* Distance from the top */
+  left: 50%; /* Center horizontally relative to the viewport */
+  transform: translateX(-50%); /* Correct centering */
+  width: 90%; /* Set a fixed width */
+  max-width: 1200px; /* Limit width for larger screens */
+  margin: 0 auto; /* Ensure it stays centered */
+  z-index: 1000; /* Ensure the navbar stays on top */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Container for Logo, Nav Items, and Mobile Menu */
+.NavbarContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ensure it takes full width */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Logo Styles */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ff88;
+  cursor: pointer;
+}
+
+/* Mobile Menu Button */
+.MobileMenuButton {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none; /* Hidden in desktop view */
+  z-index: 1001; /* Ensure it's above the nav */
+}
+
+/* Navigation Links Container */
+.NavItemsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Space between nav items */
+  flex-grow: 1;
+}
+
+.NavItem {
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.NavItem::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00ff88;
+  left: 50%;
+  bottom: -4px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.NavItem:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.NavItem:hover {
+  color: #00ff88;
+  transform: translateY(-3px);
+  background-color: rgba(0, 255, 136, 0.1);
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .MobileMenuButton {
+    display: block; /* Show menu button */
+  }
+
+  .NavItemsContainer {
+    display: none; /* Hide in mobile initially */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #101820;
+    padding: 20px;
+    border-radius: 0 0 20px 20px;
+    z-index: 10;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .NavItemsContainer.isOpen {
+    display: flex; /* Show when menu is open */
+  }
+
+  .NavItem {
+    margin: 15px 0; /* Spacing between items in mobile */
+    padding: 10px 20px;
+    width: 100%; /* Full width for mobile */
+    text-align: center;
+  }
+}
+
+/* Smooth Transitions */
+* {
+  transition: all 0.3s ease-in-out;
+}
